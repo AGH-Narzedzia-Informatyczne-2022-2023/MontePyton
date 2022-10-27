@@ -1,4 +1,5 @@
 import pygame
+from _objects.gameObject import gameObject
 
 background_colour = (234, 212, 252)
 
@@ -11,6 +12,9 @@ screen.fill(background_colour)
 pygame.display.flip()
 
 running = True
+
+obiekt = gameObject(1, 1)
+print(obiekt.posX)
 
 while running:
 
