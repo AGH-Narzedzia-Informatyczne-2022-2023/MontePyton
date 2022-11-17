@@ -21,6 +21,9 @@ https://pin.it/6kL0GqF
 
 </details>
 
+## Licencja
+Przekierowanie do [Licencji](https://github.com/AGH-Narzedzia-Informatyczne-2022-2023/MontePyton/blob/main/LICENSE)
+
 ## Autorzy
 - [Emilia Myrta](https://github.com/emiliamyr);
 - [Oliwier Maj](https://github.com/majoliwier);
