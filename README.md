@@ -1,6 +1,6 @@
 # PytonJumper
 ------------------------------------------------
-Witamy w repozytorium MontePyton.
+Witamy serdecznie w repozytorium MontePyton.
 
 ## Cel projektu
 Stworzenie stosunkowo prostej gry platformowej, podobnej do starszych gier 2D, jak choćby znana seria Mario. Głównym celem, jak to bywa w przypadku pierwszych projektów jest jednak nauka, nauka na błędach i nauka przez zabawę.
