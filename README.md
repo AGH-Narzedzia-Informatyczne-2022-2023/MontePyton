@@ -3,7 +3,9 @@
 Witamy w repozytorium MontePyton.
 
 ## Cel projektu
-Stworzenie stosunkowo prostej gry platformowej, podobnej do starszych gier 2D, jak choćby znana seria Mario. Głównym celem, jak to bywa w przypadku pierwszych projektów jest jednak nauka, nauka na błędach i nauka przez zabawę. 
+Stworzenie stosunkowo prostej gry platformowej, podobnej do starszych gier 2D, jak choćby znana seria Mario. Głównym celem, jak to bywa w przypadku pierwszych projektów jest jednak nauka, nauka na błędach i nauka przez zabawę.
+
+Wybranym przez nas językiem programowania będzie **Python**.
 
 ## Nasze inspiracje na tablicy na Pintereście
 https://pin.it/6kL0GqF
