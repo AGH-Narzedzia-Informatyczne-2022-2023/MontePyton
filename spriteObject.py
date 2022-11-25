@@ -1,4 +1,6 @@
-#gameobjects
+
+#objects
+#importing py objects!!!
 import gameObject
 class spriteObject(gameObject):
 
