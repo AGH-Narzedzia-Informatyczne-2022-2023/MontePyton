@@ -4,6 +4,7 @@ from _objects.gameObject import gameObject
 
 background_colour = (234, 212, 4202137)
 
+
 screen = pygame.display.set_mode((300, 300))
 
 pygame.display.set_caption('Platformer Game')
@@ -14,7 +15,7 @@ pygame.display.flip()
 
 running = True
 
-obiekt = gameObject(21, 37)
+obiekt = gameObject(0, 4)
 print(obiekt.posX)
 
 while running:
