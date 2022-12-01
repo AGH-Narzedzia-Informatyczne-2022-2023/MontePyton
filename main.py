@@ -2,7 +2,8 @@ import pygame
 from _objects.gameObject import gameObject
 #adding functionality to our project
 
-background_colour = (234, 212, 525)
+background_colour = (234, 212, 4202137)
+
 
 screen = pygame.display.set_mode((300, 300))
 
