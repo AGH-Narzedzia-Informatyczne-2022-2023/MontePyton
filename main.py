@@ -14,7 +14,7 @@ pygame.display.flip()
 
 running = True
 
-obiekt = gameObject(232, 33)
+obiekt = gameObject(21, 37)
 print(obiekt.posX)
 
 while running:
