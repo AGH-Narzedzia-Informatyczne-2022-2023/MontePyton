@@ -1,29 +1,32 @@
 import pygame, sys
 from pytmx.util_pygame import load_pygame
-import player
+from pathlib import Path
 
-r = 234
-g = 212
-b = 45
+class Tile(pygame.sprite.Sprite):
+    def __init__(self,pos,surf,groups):
+        super().__init__(groups)
+        self.image = surf
+        self.rect = self.image.get_rect(topleft = pos)
 
-# 1 pixel = 4 x 4 pixels on screen
+pygame.init()
 screen = pygame.display.set_mode((1280, 720))
+tmxdata = load_pygame("../.game/gameinpy.tmx")
+sprite_group = pygame.sprite.Group()
 
-pygame.display.set_caption('Platformer Game')
+for layer in tmxdata.visible_layers:
+    if hasattr(layer, 'data'):
+        for x,y,surf in layer.tiles():
+            print(surf)
+            pos = (x * 64, y * 64)
+            Tile(pos = pos, surf = surf, groups = sprite_group)
 
-running = True
 
-while running:
-
-    background_colour = (r, g, b)
-
-    screen.fill(background_colour)
-
-    pygame.display.flip()
-
-    obj = player.Player
-
+while True:
     for event in pygame.event.get():
-
         if event.type == pygame.QUIT:
-            running = False
+            pygame.quit()
+            sys.exit()
+
+    screen.fill('black')
+    sprite_group.draw(screen)
+    pygame.display.update()
