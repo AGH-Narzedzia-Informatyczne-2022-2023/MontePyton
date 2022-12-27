@@ -1,4 +1,5 @@
 import pygame
+from settings import *
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos):
@@ -6,7 +7,8 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.Surface((64, 64))
         pygame.Surface.fill(self.image, (255, 0, 0))
         self.rect = self.image.get_rect(topleft = pos)
-        self.direction = pygame.math.Vector2(0,0)
+        self.direction = pygame.math.Vector2(0.0,0.0)
+        self.localSpeed = playerSpeed
 
     def getInput(self):
         keys = pygame.key.get_pressed()
@@ -20,4 +22,4 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.getInput()
-        self.rect.x += self.direction.x
+        self.rect.x += self.direction.x * self.localSpeed
