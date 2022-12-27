@@ -3,12 +3,13 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
-        self.image = pygame.surface((16, 16))
-        self.image.fill('red')
+        self.image = pygame.Surface((64, 64))
+        pygame.Surface.fill(self.image, (255, 0, 0))
         self.rect = self.image.get_rect(topleft = pos)
+        print("dziala")
         self.direction = pygame.math.Vector2(0,0)
 
-    def get_input(self):
+    def getInput(self):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_RIGHT]:
@@ -19,5 +20,5 @@ class Player(pygame.sprite.Sprite):
             self.direction.x = 0
 
     def update(self):
-        self.get_input()
+        self.getInput()
         self.rect.x += self.direction.x
