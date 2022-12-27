@@ -1,6 +1,6 @@
 import pygame
 from pytmx.util_pygame import load_pygame
-from settings import tileScale
+from settings import *
 from player import Player
 from tile import Tile
 
@@ -10,13 +10,15 @@ class Level:
         self.path = path
         self.screen = screen
 
+        self.worldShift = 0.0
+
         self.setupLevel()
 
     def setupLevel(self):
         self.tiles = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
 
-        player_sprite = Player((64, 64))
+        player_sprite = Player((300, 64))
         self.player.add(player_sprite)
 
         tmxdata = load_pygame(self.path)
@@ -28,8 +30,25 @@ class Level:
                     tile = Tile(pos, surf)
                     self.tiles.add(tile)
 
+    def moveCameraX(self):
+        player = self.player.sprite
+        player_x = player.rect.centerx
+        direction_x = player.direction.x
+
+        if player_x < 200 and direction_x < 0:
+            self.worldShift = playerSpeed
+            player.localSpeed = 0
+        elif player_x > 1000 and direction_x > 0:
+            self.worldShift = -playerSpeed
+            player.localSpeed = 0
+        else:
+            self.worldShift = 0
+            player.localSpeed = playerSpeed
+
     def update(self):
+        self.tiles.update(self.worldShift)
         self.tiles.draw(self.screen)
 
         self.player.update()
         self.player.draw(self.screen)
+        self.moveCameraX()
