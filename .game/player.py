@@ -6,7 +6,6 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.Surface((64, 64))
         pygame.Surface.fill(self.image, (255, 0, 0))
         self.rect = self.image.get_rect(topleft = pos)
-        print("dziala")
         self.direction = pygame.math.Vector2(0,0)
 
     def getInput(self):
